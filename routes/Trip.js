@@ -1,6 +1,6 @@
 const express = require('express');
 const multer = require('multer');
-const tripmodels = require('../models/Trip');
+const tripmodels = require('../models/trip');
 const methodOverride = require('method-override'); // Cài đặt method-override
 const router = express.Router();
 
