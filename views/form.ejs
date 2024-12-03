@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Thêm/Sửa Trip</title>
+</head>
+<body>
+  <h1><%= trip.id ? 'Sửa Trip' : 'Thêm Trip' %></h1>
+  <form action="<%= action %>" method="POST" enctype="multipart/form-data">
+    <input type="hidden" name="_method" value="<%= method %>">
+    <label>Trip Name:</label>
+    <input type="text" name="name" value="<%= trip.name || '' %>" required><br>
+    <label>Time:</label>
+    <input type="text" name="time" value="<%= trip.time || '' %>" required><br>
+    <label>Days:</label>
+    <input type="number" name="days" value="<%= trip.days || '' %>" required><br>
+    <label>Price:</label>
+    <input type="number" name="price" value="<%= trip.price || '' %>" required><br>
+    <label>Avatar:</label>
+    <input type="file" name="avatar"><br>
+    <button type="submit"><%= trip.id ? 'Cập nhật' : 'Thêm' %></button>
+  </form>
+</body>
+</html>

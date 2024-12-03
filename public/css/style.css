@@ -1,0 +1,33 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #493e3e;
+    color: #fff;
+    text-align: center;
+  }
+  button{
+    background-color: rgb(95, 51, 64);
+    float: left;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin: 10px;
+  }
+  button:hover {
+    background-color: #00a;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  table, th, td {
+    border: 1px solid #fff;
+  }
+  th, td {
+    padding: 10px;
+    text-align: center;
+  }
+  a {
+    color: #00f;
+  }
+  

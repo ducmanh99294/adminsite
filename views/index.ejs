@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="/css/style.css">
+  <title>Quản Lý Trips</title>
+</head>
+<body>
+  <h1>Quản Lý Trips</h1>
+  <button type="button"><a class="add" href="/trips/new">Thêm Trip</a></button>
+  
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Trip Name</th>
+        <th>Time</th>
+        <th>Days</th>
+        <th>Price</th>
+        <th>Avatar</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% tripmodels.forEach((trip, index) => { %> <!-- Sửa dòng này -->
+        <tr>
+          <td><%= index + 1 %></td>
+          <td><%= trip.name %></td>
+          <td><%= trip.time %></td>
+          <td><%= trip.days %></td>
+          <td><%= trip.price %></td>
+          <td>
+            <% if (trip.avatar) { %>
+              <img src="<%= trip.avatar %>" alt="<%= trip.name %>" width="100">
+            <% } %>
+          </td>
+          <td>
+            <a href="/tripmodels/<%= trip.id %>/edit">Sửa</a>
+            <form action="/tripmodels/<%= trip.id %>?_method=DELETE" method="POST" style="display:inline;">
+              <button type="submit">Xóa</button>
+            </form>
+          </td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</body>
+</html>
